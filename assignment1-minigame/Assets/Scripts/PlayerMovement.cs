@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
     public float moveSpeed = 7f;
+    public SpawnObject spawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,5 +22,13 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector3(hInput * moveSpeed, rb.velocity.y, vInput * moveSpeed);
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("crystal"))
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }
