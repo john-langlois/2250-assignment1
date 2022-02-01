@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class SpawnObject : MonoBehaviour
 {
-    public  GameObject crystal;
+    public GameObject crystal, crystalGold, crystalSilver;
     public Vector3 size;
     public Vector3 center;
-    private ArrayList objectList = new ArrayList();
+    
 
     // Start is called before the first frame update
     void Start()
 
     {
-        createEnemy(8);
+        createCrystalEnemy(3);
+        createCrystalGoldEnemy(3);
+        createCrystalSilverEnemy(3);
         
     }
 
@@ -23,11 +25,25 @@ public class SpawnObject : MonoBehaviour
         transform.Rotate(new Vector3(0f, 100f, 0f) * Time.deltaTime);
     }
     
-    public void createEnemy(int enemyNum)
+    public void createCrystalEnemy(int enemyNum)
     {
-        for(int i = 0; i < enemyNum; i++)
+        for (int i = 0; i < enemyNum; i++)
         {
             GameObject enemyClone = Instantiate(crystal, new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2)), Quaternion.identity);
+        }
+    }
+    public void createCrystalGoldEnemy(int enemyNum)
+    {
+        for (int i = 0; i < enemyNum; i++)
+        {
+            GameObject enemyClone = Instantiate(crystalGold, new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2)), Quaternion.identity);
+        }
+    }
+    public void createCrystalSilverEnemy(int enemyNum)
+    {
+        for (int i = 0; i < enemyNum; i++)
+        {
+            GameObject enemyClone = Instantiate(crystalSilver, new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2)), Quaternion.identity);
         }
     }
 

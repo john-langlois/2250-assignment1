@@ -27,7 +27,19 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        //if collides with crystal of each of thes tags it will make
+        //it disappear
         if (other.gameObject.CompareTag("crystal"))
+        {
+            other.gameObject.SetActive(false);
+        }
+        //gold crystal
+        if (other.gameObject.CompareTag("gold"))
+        {
+            other.gameObject.SetActive(false);
+        }
+        //silver crystal
+        if (other.gameObject.CompareTag("silver"))
         {
             other.gameObject.SetActive(false);
         }

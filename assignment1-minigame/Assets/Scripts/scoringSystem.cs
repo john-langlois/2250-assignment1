@@ -16,8 +16,20 @@ public class scoringSystem : MonoBehaviour
             scoreValue += 10;
             count+=1;
             scoreText.GetComponent<Text>().text = "SCORE: " + scoreValue;
-            
         }
-        
+        else if (other.gameObject.CompareTag("gold"))
+        {
+            scoreValue += 30;
+            count += 1;
+            scoreText.GetComponent<Text>().text = "SCORE: " + scoreValue;
+        }
+
+        else if (other.gameObject.CompareTag("silver"))
+        {
+            scoreValue += 20;
+            count += 1;
+            scoreText.GetComponent<Text>().text = "SCORE: " + scoreValue;
+        }
+
     }
 }
