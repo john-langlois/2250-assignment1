@@ -25,7 +25,7 @@ public class restartGame : MonoBehaviour
     {
        if(scoring.count == 8)
         {
-            Restart();
+            Invoke("Restart", 2.0f);
         }
         
     }
