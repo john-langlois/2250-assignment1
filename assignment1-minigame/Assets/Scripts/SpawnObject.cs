@@ -8,6 +8,7 @@ public class SpawnObject : MonoBehaviour
     public Vector3 size;
     public Vector3 center;
     private ArrayList objectList = new ArrayList();
+
     // Start is called before the first frame update
     void Start()
 
